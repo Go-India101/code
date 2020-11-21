@@ -17,18 +17,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
   </head>
 
   <body bgcolor= #07094b width="device-width" inscale= 1 >
       <center>
           <font color = "orangered" size="50pt" style="font-family: 'Monoton', cursive;">Go Code</font>
-          <br><br><hr color="orangered" ><hr color="orangered">
-        <textarea id="html" placeholder="HTML" style= "color: #40ff00;">Hello World</textarea><br>
-    <textarea id="css" placeholder="CSS" style= "color: red;"></textarea><br>
-    <textarea id="js" placeholder="JavaScript" style= "color: yellow;" ></textarea>
+          <br><br><hr color="orangered" ><hr color="orangered"><br>
+          
+          
+          <textarea autofocus id="html" placeholder="HTML" style= "color: #40ff00; display: block;">Hello World</textarea><br>
+          <button onclick="change2()">CSS</button>
+          <button onclick="change3()">JAVA</button>
+    <textarea id="css" placeholder="CSS" style= "color: rgb(218, 0, 0); display: block;"></textarea><br>
+    <textarea id="js" placeholder="JavaScript" style= "color: yellow; display: none;" ></textarea>
     <br><br><b><font color="white" size="5">Preview</b></font>
     <iframe id="code"></iframe><br><br>
   <font color="orangered">  &copy; <a href="https://goindia101.blogspot.com/" style="text-decoration: none; color: orangered;">Go India</a></font>
+<script>
+
+
+function change2(){
+document.getElementById("js").style.display = "none";
+document.getElementById("css").style.display = "block";
+
+
+}
+function change3() {
+document.getElementById("js").style.display = "block";
+document.getElementById("css").style.display = "none";
+}
+
+</script>
 <style>
     body {
   text-align: center;
@@ -62,15 +83,15 @@ textarea::-webkit-scrollbar-track {
 textarea::-webkit-scrollbar-thumb {
   background-color: orangered ;
   border-radius: 6px;
-  border: 1px solid var(--scrollbarBG);
+  border: 3px solid var(--scrollbarBG);
 }
 textarea {
-  width: 100%
+  width: 100%;
   float: top;
   min-height: 250px;
   overflow: scroll;
   margin: auto;
-  display: inline-block;
+  float: top;
   background: #f4f4f9;
   outline: none;
   font-family: 'Noto Sans', sans-serif;
@@ -82,10 +103,9 @@ textarea {
   border-color: white;
   border-radius: 10px;
   autocorrect: none; 
-  cursor: default;
-  caret-width: 3px;
   font-size: 15pt;
-resize: none;
+  resize: none;
+  spell-check: none;
 }
 ::placeholder {
   color: #ffffff;
@@ -101,6 +121,19 @@ resize: none;
 ::-ms-input-placeholder { /* Microsoft Edge */
  color: #ffffff;
  font-size: 30pt;
+}
+button {
+width: 150px;
+height: 35px;
+background-color: #0f0774;
+color: white;
+border: 2px solid;
+border-color: white;
+border-bottom-color: transparent;
+border-radius: 10px 10px 0px 0px;
+font-family: 'Roboto', sans-serif;
+focus;
+outline: none;
 }
 
 iframe {
