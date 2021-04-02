@@ -22,38 +22,85 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
   </head>
 
-  <body bgcolor= #07094b width="device-width" inscale= 1 >
-      <center>
-          <font color = "orangered" size="50pt" style="font-family: 'Monoton', cursive;">Go Code</font>
-          <br><br><hr color="orangered" ><hr color="orangered"><br>
+  <body bgcolor= #002a42 width="device-width" inscale= 1 onload="loader()">
+    <center>><div id="loader" style="width: 100%; height: 100%; background-color: #002a42; position: fixed;"><span class="loader"><span class="loader-inner"></span></span></div></center>
+        <button onclick="change1()">HTML</button>
+        <button onclick="change2()">CSS</button>
+        <button onclick="change3()">JAVA</button>
+        <button onclick="change4()">PREVIEW</button>
+        <button onclick="change5()">COPY</button><font id="br" style="display: none;"><br></font>
+          <button onclick="copy1()" id="copy1" class="copy1" style="display: none;">COPY HTML</button><font id="br1" style="display: none;"><br></font>
+          <button onclick="copy2()" id="copy2" class="copy2" style="display: none;">COPY CSS</button><font id="br2" style="display: none;"><br></font>
+          <button onclick="copy3()" id="copy3" class="copy3" style="display: none;">COPY JAVA</button><font id="br3" style="display: none;"><br></font>
+        <center>
           
-          
-          <textarea wrap="off" autofocus id="html" placeholder="HTML" style= "color: #40ff00; display: block;">Hello World</textarea><br>
-          <button onclick="change2()">CSS</button>
-          <button onclick="change3()">JAVA</button>
-    <textarea wrap="off" id="css" placeholder="CSS" style= "color: rgb(218, 0, 0); display: block;"></textarea><br>
-    <textarea wrap="off" id="js" placeholder="JavaScript" style= "color: yellow; display: none;" ></textarea>
-    <br><br><b><font color="white" size="5">Preview</b></font>
-    <iframe id="code"></iframe><br><br>
-  <font color="orangered">  &copy; <a href="https://goindia101.blogspot.com/" style="text-decoration: none; color: orangered;">Go India</a></font>
-<script>
+          <textarea wrap="off" id="html" spellcheck = "false" placeholder="HTML" style= "color: #40ff00; display: block;"></textarea>
 
+    <textarea wrap="off" id="css" spellcheck = "false" placeholder="CSS" style= "color: rgb(218, 0, 0); display: none;"></textarea>
+    <textarea wrap="off" id="js" spellcheck = "false" placeholder="JavaScript" style= "color: yellow; display: none;" ></textarea>
+    <iframe id="code"></iframe>
+  <style>
 
-function change2(){
-document.getElementById("js").style.display = "none";
-document.getElementById("css").style.display = "block";
-
-
-}
-function change3() {
-document.getElementById("js").style.display = "block";
-document.getElementById("css").style.display = "none";
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  top: 50%;
+  animation: loader 2s infinite ease;
 }
 
-</script>
-<style>
-    body {
-  text-align: center;
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
 }
 body::-webkit-scrollbar {
   width: 7px;
@@ -63,7 +110,7 @@ body {
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 body::-webkit-scrollbar-track {
-  background: #07094b;
+  background: #002a42;
 }
 body::-webkit-scrollbar-thumb {
   background-color: orangered ;
@@ -72,41 +119,40 @@ body::-webkit-scrollbar-thumb {
   
 }
 textarea::-webkit-scrollbar {
-  width: 3px;
+  width: 20px;
 }
 textarea {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 textarea::-webkit-scrollbar-track {
-  background: #07094b;
+  background: #002a42;
 }
 textarea::-webkit-scrollbar-thumb {
-  background-color: orangered ;
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.288) ;
   border: 3px solid var(--scrollbarBG);
 }
+textarea:focus::placeholder {
+        color: transparent;
+      }
 textarea {
   width: 100%;
   float: top;
-  min-height: 250px;
+  height: 90%;
   overflow: scroll;
   margin: auto;
   float: top;
   background: #f4f4f9;
   outline: none;
   font-family: 'Noto Sans', sans-serif;
-  background-color: #07094b;
+  background-color: #002a42;
   font-size: 14px;
-  caret-color: tomato;
+  caret-color: white;
   size: 50px;
-  border: 2px solid;
-  border-color: white;
-  border-radius: 10px;
-  autocorrect: none; 
+  border: 1px solid;
+  border-color: black;
   font-size: 15pt;
   resize: none;
-  spell-check: none;
 }
 ::placeholder {
   color: #ffffff;
@@ -123,33 +169,61 @@ textarea {
  color: #ffffff;
  font-size: 30pt;
 }
+.copy1 {
+  color: #40ff00;
+  border: 4px solid;
+  font-size: 30pt;
+  border-radius: 0px;
+  width: 100%;
+  height: 20%;
+}
+.copy2 {
+  color: rgb(218, 0, 0);
+  border: 4px solid;
+  font-size: 30pt;
+  border-radius: 0px;
+  width: 100%;
+  height: 20%;
+}
+.copy3 {
+  color: yellow;
+  border: 4px solid;
+  font-size: 30pt;
+  border-radius: 0px;
+  width: 100%;
+  height: 20%;
+}
 button {
 width: 150px;
 height: 35px;
-background-color: #0f0774;
+background-color: #002a42;
 color: white;
-border: 2px solid;
-border-color: white;
-border-bottom-color: transparent;
-border-radius: 10px 10px 0px 0px;
+border: 1px solid;
+border-color: black;
 font-family: 'Roboto', sans-serif;
 focus;
 outline: none;
 }
+button:focus {
+  color: #40ff00;
+  background-color: #003f63;
+
+}
 
 iframe {
   bottom: 0;
+  display: none;
   position: relative;
   width: 100%;
-  height: 35em;
-  border-radius: 5px;
-  color: white;
+  height: 90%;
+  color: black;
   background-color: white;
-  border: 4px solid;
+  border: 1px solid;
 }
 
 </style>
 </center>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
