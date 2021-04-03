@@ -23,21 +23,22 @@
   </head>
 
   <body bgcolor= #002a42 width="device-width" inscale= 1 onload="loader()">
-    <center>><div id="loader" style="width: 100%; height: 100%; background-color: #002a42; position: fixed;"><span class="loader"><span class="loader-inner"></span></span></div></center>
-        <button onclick="change1()">HTML</button>
-        <button onclick="change2()">CSS</button>
-        <button onclick="change3()">JAVA</button>
-        <button onclick="change4()">PREVIEW</button>
-        <button onclick="change5()">COPY</button><font id="br" style="display: none;"><br></font>
-          <button onclick="copy1()" id="copy1" class="copy1" style="display: none;">COPY HTML</button><font id="br1" style="display: none;"><br></font>
-          <button onclick="copy2()" id="copy2" class="copy2" style="display: none;">COPY CSS</button><font id="br2" style="display: none;"><br></font>
-          <button onclick="copy3()" id="copy3" class="copy3" style="display: none;">COPY JAVA</button><font id="br3" style="display: none;"><br></font>
+    <center><div id="loader" style="width: 100%; height: 100%; background-color: #002a42; position: fixed;"><span class="loader"><span class="loader-inner"></span></span></div></center>
+        <header><button onclick="change1();" id="buttonhtml" class="bhtml" style="color: #40ff00;background-color: #003f63;">HTML</button>
+        <button onclick="change2();" id="buttoncss" class="bcss">CSS</button>
+        <button onclick="change3();" id="buttonjs" class="bjs">JAVA</button>
+        <button onclick="change4();" id="buttoncode" class="bcode">PREVIEW</button>
+        </header>
         <center>
-          
+          <div>
           <textarea wrap="off" id="html" spellcheck = "false" placeholder="HTML" style= "color: #40ff00; display: block;"></textarea>
+          <textarea wrap="off" id="css" spellcheck = "false" placeholder="CSS" style= "color: rgb(218, 0, 0); display: none;"></textarea>
+          <textarea wrap="off" id="js" spellcheck = "false" placeholder="JavaScript" style= "color: yellow; display: none;" ></textarea>
+          <button onclick="copy1();" id="copy11" class="copy1" style="display: block;">COPY</button>
+          <button onclick="copy2();" id="copy12" class="copy2" style="display: none;">COPY</button>
+          <button onclick="copy3();" id="copy13" class="copy3" style="display: none;">COPY</button>
+        </div>
 
-    <textarea wrap="off" id="css" spellcheck = "false" placeholder="CSS" style= "color: rgb(218, 0, 0); display: none;"></textarea>
-    <textarea wrap="off" id="js" spellcheck = "false" placeholder="JavaScript" style= "color: yellow; display: none;" ></textarea>
     <iframe id="code"></iframe>
   <style>
 
@@ -114,7 +115,7 @@ body::-webkit-scrollbar-track {
 }
 body::-webkit-scrollbar-thumb {
   background-color: orangered ;
-  border-radius: 6px;
+  border-radius: 0px;
   border: 3px solid var(--scrollbarBG);
   
 }
@@ -126,7 +127,7 @@ textarea {
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 textarea::-webkit-scrollbar-track {
-  background: #002a42;
+  background: transparent;
 }
 textarea::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.288) ;
@@ -145,7 +146,7 @@ textarea {
   background: #f4f4f9;
   outline: none;
   font-family: 'Noto Sans', sans-serif;
-  background-color: #002a42;
+  background-color: #003f63;
   font-size: 14px;
   caret-color: white;
   size: 50px;
@@ -154,13 +155,57 @@ textarea {
   font-size: 15pt;
   resize: none;
 }
+.copy1{
+  color: white;
+  border-color: transparent;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: transparent;
+  width: 50px;
+
+}
+.copy2{
+  color: white;
+  border-color: transparent;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: transparent;
+  width: 50px;
+
+}
+.copy3{
+  color: white;
+  border-color: transparent;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: transparent;
+  width: 50px;
+
+}
+.copy1:focus{
+  background-color: transparent;
+  color: white;
+
+}
+.copy2:focus{
+  background-color: transparent;
+  color: white;
+
+}
+.copy3:focus{
+  background-color: transparent;
+  color: white;
+
+}
 ::placeholder {
   color: #ffffff;
   font-size: 30pt;
   opacity: 1; /* Firefox */
 }
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
++-ms-input-placeholder { /* Internet Explorer 10-11 */
  color: #ffffff;
  font-size: 30pt;
 }
@@ -169,30 +214,7 @@ textarea {
  color: #ffffff;
  font-size: 30pt;
 }
-.copy1 {
-  color: #40ff00;
-  border: 4px solid;
-  font-size: 30pt;
-  border-radius: 0px;
-  width: 100%;
-  height: 20%;
-}
-.copy2 {
-  color: rgb(218, 0, 0);
-  border: 4px solid;
-  font-size: 30pt;
-  border-radius: 0px;
-  width: 100%;
-  height: 20%;
-}
-.copy3 {
-  color: yellow;
-  border: 4px solid;
-  font-size: 30pt;
-  border-radius: 0px;
-  width: 100%;
-  height: 20%;
-}
+
 button {
 width: 150px;
 height: 35px;
@@ -209,6 +231,7 @@ button:focus {
   background-color: #003f63;
 
 }
+
 
 iframe {
   bottom: 0;
